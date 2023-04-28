@@ -1,0 +1,28 @@
+---
+#ddev-generated
+services:
+  gotenberg:
+    command: bash -c 'gotenberg --chromium-ignore-certificate-errors'
+    container_name: ddev-${DDEV_SITENAME}-gotenberg
+    environment:
+      - VIRTUAL_HOST=$DDEV_HOSTNAME
+    expose:
+      - 3000
+    external_links:
+      - ddev-router:${DDEV_SITENAME}.${DDEV_TLD}
+    healthcheck:
+      interval: 60s
+      test: [ CMD, curl, -f, http://gotenberg:3000/health ]
+      timeout: 10s
+    image: gotenberg/gotenberg:latest
+    labels:
+      com.ddev.approot: $DDEV_APPROOT
+      com.ddev.site-name: ${DDEV_SITENAME}
+    restart: 'no'
+    volumes:
+      - ddev_config:/mnt/ddev_config
+  web:
+    links:
+      - gotenberg
+volumes:
+  ddev_config:
