@@ -2,12 +2,27 @@
 
 ## What is ddev-gotenberg?
 
-This repository allows you to quickly install [Gotenberg](https://gotenberg.dev) into a [DDEV](https://ddev.readthedocs.io) project using just `ddev get echavaillaz/ddev-gotenberg`.
+This repository allows you to quickly install [Gotenberg](https://gotenberg.dev) into a [DDEV](https://ddev.readthedocs.io) project using the instructions below.
 
 ## Installation
 
-1. `ddev get echavaillaz/ddev-gotenberg`
-2. `ddev restart`
+For DDEV v1.23.5 or above run
+
+```sh
+ddev add-on get echavaillaz/ddev-gotenberg
+```
+
+For earlier versions of DDEV run
+
+```sh
+ddev get echavaillaz/ddev-gotenberg
+```
+
+Then restart the project
+
+```sh
+ddev restart
+```
 
 ## Explanation
 
