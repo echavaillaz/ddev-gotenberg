@@ -1,17 +1,6 @@
 name: gotenberg
 
-# List of actions to run before installing the addon.
-pre_install_actions:
-
-# List of files and directories listed that are copied into project .ddev directory
 project_files:
-- docker-compose.gotenberg.yaml
+  - docker-compose.gotenberg.yaml
 
-# List of files and directories that are copied into the global .ddev directory
-global_files:
-
-# List of actions to run after installing the addon.
-post_install_actions:
-
-# Advanced usage - yaml files can be read in and then used as go template actions
-yaml_read_files:
+ddev_version_constraint: '>= v1.24.3'
