@@ -11,7 +11,7 @@ services:
       - ddev-router:${DDEV_SITENAME}.${DDEV_TLD}
     healthcheck:
       interval: 60s
-      test: [ CMD, curl, -f, http://gotenberg:3000/health ]
+      test: [CMD, curl, -f, http://gotenberg:3000/health]
       timeout: 10s
     image: ${GOTENBERG_DOCKER_IMAGE:-gotenberg/gotenberg:latest}
     labels:
